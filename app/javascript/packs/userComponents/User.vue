@@ -2,10 +2,14 @@
     <div class="component">
         <h1>The User Component</h1>
         <p>I'm an awesome User!</p>
+        <button @click="changeName">Change Name</button>
+        <p>Name is: {{ name }}</p>
         <hr>
         <div class="row">
             <div class="col-xs-12 col-sm-6">
-                <app-user-detail></app-user-detail>
+                <app-user-detail v-bind:name="name"
+                                 @nameWasReset="name = $event"
+                :resetFunction="resetName"></app-user-detail>
             </div>
             <div class="col-xs-12 col-sm-6">
                 <app-user-edit></app-user-edit>
@@ -19,6 +23,19 @@
     import UserEdit from './UserEdit.vue';
 
     export default {
+        data(){
+            return {
+                name: 'Abhinav'
+            }
+        },
+        methods: {
+            changeName(){
+                this.name = 'Ksenia'
+            },
+            resetName(){
+                this.name = 'Abhinav'
+            }
+        },
         components: {
             appUserDetail: UserDetail,
             appUserEdit: UserEdit
