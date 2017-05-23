@@ -25,16 +25,17 @@
     export default {
         data(){
             return {
-                name: 'Abhinav'
+                name: 'Abhinav',
+                age: 27
             }
         },
         methods: {
             changeName(){
-                this.name = 'Ksenia'
+                this.name = 'Mathur'
             },
             resetName(){
                 this.name = 'Abhinav'
-            }
+            },
         },
         components: {
             appUserDetail: UserDetail,
