@@ -11,4 +11,9 @@ class LandingController < ApplicationController
   def servers
 
   end
+
+  def quotes
+
+  end
+
 end
