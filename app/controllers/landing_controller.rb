@@ -7,4 +7,8 @@ class LandingController < ApplicationController
   def communication
 
   end
+
+  def servers
+
+  end
 end
