@@ -20,4 +20,8 @@ class LandingController < ApplicationController
 
   end
 
+  def forms
+
+  end
+
 end
