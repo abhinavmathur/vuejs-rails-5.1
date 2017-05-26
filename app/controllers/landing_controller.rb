@@ -16,4 +16,8 @@ class LandingController < ApplicationController
 
   end
 
+  def wonderful_quotes
+
+  end
+
 end

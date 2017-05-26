@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/communication' => 'landing#communication'
   get '/servers' => 'landing#servers'
   get '/quotes' => 'landing#quotes'
+  get '/wonderful-quotes' => 'landing#wonderful_quotes'
 end
