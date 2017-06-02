@@ -1,11 +1,14 @@
 <div class="container" xmlns:v-bind="http://www.w3.org/1999/xhtml">
   <p>
-    Ask a yes/no question
-    <input type="text" v-model="question">
+    <div class="form-group">
+      <label for="">Ask a yes/no question</label>
+      <input type="text" v-model="question" class="form-control">
+    </div>
   </p>
 
   <img :src="image" alt="">
 
+  <br>
   <br>
   <h4>{{ answer }}</h4>
 </div>
@@ -25,7 +28,7 @@
         watch: {
             // whenever question changes, this function will run
             question: function (newQuestion) {
-                this.answer = 'Waiting for you to stop typing...'
+                this.answer = 'Waiting for you to stop typing...';
                 this.getAnswer()
             }
         },
@@ -40,13 +43,13 @@
             getAnswer: _.debounce(
                 function () {
                     var vm = this;
-                    if (this.question.indexOf('?') === -1) {
-                        this.answer = 'Questions usually contain a question mark. ;-)';
-                        vm.image = '';
+                    if (this.question.indexOf('?') === -1 || !this.question.startsWith('Is')) {
+                        this.answer = 'Questions usually contain a question mark and start with "Is..." ;-)';
+                        this.image = '';
                         return
                     }
                     this.answer = 'Thinking...';
-                    vm.image = '';
+                    this.image = '';
                     axios.get('https://yesno.wtf/api')
                         .then(function (response) {
                             vm.answer = _.capitalize(response.data.answer);
