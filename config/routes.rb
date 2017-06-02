@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/quotes' => 'landing#quotes'
   get '/wonderful-quotes' => 'landing#wonderful_quotes'
   get '/forms' => 'landing#forms'
+  get '/multistep' => 'landing#multistep'
 end

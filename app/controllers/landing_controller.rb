@@ -24,4 +24,8 @@ class LandingController < ApplicationController
 
   end
 
+  def multistep
+
+  end
+
 end
